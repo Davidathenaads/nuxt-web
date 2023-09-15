@@ -6,7 +6,7 @@ import footerLayout from '@/components/layout/footerLayout.vue';
 
 <template>
 <div id="layout">
-  <header-layout class="invisible sm:invisible xl:visible"></header-layout>
+  <header-layout class="hidden sm:hidden xl:hidden"></header-layout>
   <NuxtPage></NuxtPage>
   <footerLayout></footerLayout>
 </div>
@@ -20,7 +20,7 @@ body {
 
 // 佈局
 #layout {
-  max-width: 100vw;
+  max-width: 100%;
   min-height: 100vh;
 }
 

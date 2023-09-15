@@ -4,18 +4,18 @@
 </script>
 
 <template>
-    <div class="footer">
+    <div class="footer pb-16">
         <div class="footerbody">
             <div class="mb-16">
-                <p class="mb-4 text-center text-4xl font-medium text-white">關注我們</p>
-                <p class="mb-4 text-center text-sm font-light text-white">FOLLOW US</p>
+                <p class="mb-2 xl:mb-4 text-center text-3xl xl:text-4xl font-medium text-white">關注我們</p>
+                <p class="mb-4 text-center text-xs xl:text-sm font-light text-white">FOLLOW US</p>
             </div>
             <div class="maildiv mb-20">
-                <img src="@/assets/img/mail-white.png" alt="" class="h-6">
+                <img src="@/assets/img/mail-white.png" alt="" class="h-5 xl:h-6">
 
             </div>
         </div>
-        <div class=" flex justify-around pb-20">
+        <div class="hidden xl:flex xl:justify-around pb-20 ">
             <div>
                 <div class="mb-5 w-40 border-b-2 pb-2 text-sm font-medium text-white">
                     <p class="">品牌介紹</p>
@@ -95,17 +95,17 @@
 
         </div>
 
-        <div class="flex justify-between pb-5">
+        <div class="flex flex-col justify-center items-center xl:justify-between xl:pb-5">
             <div>
-                <a href="" class="logolink">
-                    <img src="@/assets/img/logo.svg" alt="" height="40px">
-                    <span class="cont1-title text-white">
+                <a href="" class="logolink mb-10 mt-5">
+                    <img src="@/assets/img/logo.svg" alt="" class="h-6 xl:h-10">
+                    <span class="text-xs xl:text-sm ml-5 text-white">
                         <p>AntiGravity® Taiwan</p>
                     </span>
                 </a>
 
             </div>
-            <div class="text-right text-white text-sm">
+            <div class="xl:text-right text-white text-center text-xs xl:text-sm scale-75 xl:scale-100">
                 <p>Copyright © FLY HIGH YOGA. All Rights Reserved.
                 <br>
                 Designed by 超御設計 CROZMIND Design & Made by NEXTOP</p>
@@ -142,9 +142,6 @@
     display: flex;
   align-items: center;
 
-  .cont1-title{
-    margin-left: 20px;
-  }
 }
 
 .maildiv{

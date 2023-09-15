@@ -11,7 +11,7 @@ import indexView from '@/components/page/indexView.vue';
 <style lang="scss" scoped>
 // 佈局
 #home {
-  // a
+  width: 100%;
 }
 
 </style>

@@ -24,9 +24,15 @@ const text3 = `無需飛往外太空，
 </script>
 
 <template>
-  <div>
-    <img src="@/assets/img/page-slide-about.jpg" alt="" class="h-full sm:h-full xl:h-1/2">
+  <div class="topbanner relative bg-center">
+    <div class="left10 absolute top-1/4">
+      <p class="text-4xl text-white">the Perfect Place</p>
+      <p class="mt-2 mb-20 text-7xl text-white">From Beginner<br>to Master</p>
+      <p class="mb-16 text-4xl text-white">從初學到成為專精者的好地方。</p>
+      <a href="#" class="py-3 pr-10 pl-12 pinkbtn tracking-wider text-white">預約體驗</a>
+    </div>
   </div>
+
   <div class="bordercolor flex justify-around border-b-2 py-6">
     <div class="flex items-center">
       <img src="@/assets/img/member.png" alt="" class="w-10">
@@ -175,7 +181,7 @@ const text3 = `無需飛往外太空，
       </div>
     </div>
 
-    <formVue></formVue>
+    <!-- <formVue></formVue> -->
 
     <div class="mb-12 mt-20">
             <div class="flex justify-center gap-40">
@@ -191,6 +197,11 @@ const text3 = `無需飛往外太空，
   width: 100%;
   height: 560px;
   object-fit: cover;
+}
+
+.topbanner{
+  background-image: url("@/assets/img/slide-1.jpg");
+  height: 890px;
 }
 
 .middlebanner{
@@ -209,6 +220,10 @@ const text3 = `無需飛往外太空，
 
 .right10{
   right: 10%;
+}
+
+.pinkbtn{
+  background-color: #f19d94;
 }
 
 .bordercolor{
