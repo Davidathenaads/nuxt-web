@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const radio = ref(10);
 // form 請填寫功能描述👈
 const hobbits = ref(['一週兩次以上', '一週一次', '無']);
 const hobbitsvalue = ref('');
@@ -29,32 +30,34 @@ const store = ref([
 
 const suject = ref(['一對一健身私人教練課 諮詢體驗(60分鐘) $600', '完整填妥表格，我們將由專人處理 並會在24H內回覆您並確認訂課，請您耐心等待']);
 const sujectvalue = ref('');
+
 </script>
 
 <template>
+    <div class="container mx-auto w-[90%] p-4 xl:w-[750px]">
     <div class="flex justify-center">
-        <div class="formwidth">
+        <div class="">
         <p class="mb-5 mt-10 flex justify-start text-xs text-white">標記<span class="required">*</span>為必填項目</p>
         </div>
     </div>
 
     <div class="flex flex-col items-center justify-center">
-        <div class="formwidth mb-9">
+        <div class=" mb-9 w-full">
             <p class="mb-2 flex justify-start text-base text-white">姓名<span class="required">*</span></p>
             <input type="text" placeholder="" class="inputcolor w-full px-4 py-2">
         </div>
 
-        <div class="formwidth mb-9">
+        <div class=" mb-9 w-full">
             <p class="mb-2 flex justify-start text-base text-white">電話<span class="required">*</span></p>
             <input type="text" placeholder="" class="inputcolor w-full px-4 py-2">
         </div>
 
-        <div class="formwidth mb-9">
+        <div class=" mb-9 w-full">
             <p class="mb-2 flex justify-start text-base text-white">E-mail<span class="required">*</span></p>
             <input type="text" placeholder="" class="inputcolor w-full px-4 py-2">
         </div>
 
-        <div class="formwidth mb-9">
+        <div class=" mb-9 w-full">
             <p class="mb-2 flex justify-start text-base text-white">運動習慣<span class="required">*</span></p>
             <select v-model="hobbitsvalue" type="text" placeholder="" class="inputcolor w-full px-4 py-2">
                 <option disabled value=""></option>
@@ -62,7 +65,7 @@ const sujectvalue = ref('');
             </select>
         </div>
 
-        <div class="formwidth mb-9">
+        <div class=" mb-9 w-full">
             <p class="mb-2 flex justify-start text-base text-white">居住區域<span class="required">*</span></p>
             <select v-model="locationvalue" type="text" placeholder="" class="inputcolor w-full px-4 py-2">
                 <option disabled value=""></option>
@@ -71,24 +74,25 @@ const sujectvalue = ref('');
         </div>
     </div>
 
-    <div class="flex justify-center">
-        <div class="formwidth">
+    <div class="flex justify-start">
+        <div class="">
         <p class="mt-10 flex justify-start text-base text-white">欲預約館別<span class="required">*</span></p>
         </div>
     </div>
 
-    <div class="mb-9 flex justify-center">
-        <div class="formwidth">
-            <div v-for="item in store" id="" :key="item" class="py-2">
-                <input type="checkbox" name="">
-                <label for="" class="pl-7 text-base tracking-widest text-white">{{ item }}</label>
-            </div>
-        </div>
+    <div class="mb-9">
+        <el-radio-group v-model="radio" class="break-all">
+            <pre class="flex flex-col justify-center break-all">
+            <el-radio v-for="item in store" :key="item" :label="item" class="break-all mt-6 xl:mt-1">
+              <p class="whitespace-normal break-all">{{ item }}</p>
+            </el-radio>
+            </pre>
+        </el-radio-group>
     </div>
 
     <div class="flex justify-center">
-        <div class="formwidth">
-            <div class="formwidth mb-9">
+        <div class="">
+            <div class=" mb-9">
              <p class="mb-2 flex justify-start text-base text-white">欲體驗科目<span class="required">*</span></p>
                 <select v-model="locationvalue" type="text" placeholder="" class="inputcolor w-full px-4 py-2">
                 <option disabled value="">請選擇</option>
@@ -96,51 +100,51 @@ const sujectvalue = ref('');
                 </select>
             </div>
 
-            <div class="formwidth mb-9">
+            <div class=" mb-9">
              <p class="mb-2 flex justify-start text-base text-white">優惠碼</p>
              <input type="text" placeholder="" class="inputcolor w-full px-4 py-2">
             </div>
 
-            <div class="my-14 text-center text-2xl text-white">完整填妥表格，我們將由專人處理 並會在24H內回覆您並確認訂課，請您耐心等待</div>
-            <div class="linecolor mt-12 grid grid-cols-6 flex-wrap justify-center pb-4 pt-8">
+            <div class="my-[60px] text-center text-[22px] text-white">完整填妥表格，我們將由專人處理 並會在24H內回覆您並確認訂課，請您耐心等待</div>
+            <div class="linecolor mt-12 flex-wrap justify-center pb-4 pt-8 xl:grid xl:grid-cols-6">
 
-                <div class="px-4">
-                      <a href="#" class="mb-2 rounded p-2 linebtncolor flex justify-center">
+                <div class="px-3">
+                      <a href="#" class="linebtncolor mb-5 flex justify-center rounded p-2">
                     <img src="@/assets/img/line-outline.png" alt="" class="w-6">
                     <p class="text-white">崇德館</p>
                 </a>
                 </div>
 
-                <div class="px-4">
-                      <a href="#" class="mb-2 rounded p-2 linebtncolor flex justify-center">
+                <div class="px-3">
+                      <a href="#" class="linebtncolor mb-5 flex justify-center rounded p-2">
                     <img src="@/assets/img/line-outline.png" alt="" class="w-6">
                     <p class="text-white">精誠館</p>
                 </a>
                 </div>
 
-                <div class="px-4">
-                      <a href="#" class="mb-2 rounded p-2 linebtncolor flex justify-center">
+                <div class="px-3">
+                      <a href="#" class="linebtncolor mb-5 flex justify-center rounded p-2">
                     <img src="@/assets/img/line-outline.png" alt="" class="w-6">
                     <p class="text-white">黎明館</p>
                 </a>
                 </div>
 
-                <div class="px-4">
-                      <a href="#" class="mb-2 rounded p-2 linebtncolor flex justify-center">
+                <div class="px-3">
+                      <a href="#" class="linebtncolor mb-5 flex justify-center rounded p-2">
                     <img src="@/assets/img/line-outline.png" alt="" class="w-6">
                     <p class="text-white">河南館</p>
                 </a>
                 </div>
 
-                <div class="px-4">
-                      <a href="#" class="mb-2 rounded p-2 linebtncolor flex justify-center">
+                <div class="px-3">
+                      <a href="#" class="linebtncolor mb-5 flex justify-center rounded p-2">
                     <img src="@/assets/img/line-outline.png" alt="" class="w-6">
                     <p class="text-white">一中館</p>
                 </a>
                 </div>
 
-                <div class="px-4">
-                      <a href="#" class="mb-2 rounded p-2 linebtncolor flex justify-center">
+                <div class="px-3">
+                      <a href="#" class="linebtncolor mb-5 flex justify-center rounded p-2">
                     <img src="@/assets/img/line-outline.png" alt="" class="w-6">
                     <p class="text-white">崇善館</p>
                 </a>
@@ -149,7 +153,7 @@ const sujectvalue = ref('');
             </div>
         </div>
     </div>
-
+</div>
 </template>
 
 <style lang="scss" scoped>
@@ -166,10 +170,6 @@ const sujectvalue = ref('');
 .inputcolor{
     color: #fff;
     background-color: #d98683;
-}
-
-.formwidth{
-    width: 750px;
 }
 
 .required{

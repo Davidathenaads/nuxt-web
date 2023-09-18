@@ -24,89 +24,96 @@ const text3 = `無需飛往外太空，
 </script>
 
 <template>
-  <div class="topbanner relative bg-center">
-    <div class="left10 absolute top-1/4">
-      <p class="text-4xl text-white">the Perfect Place</p>
-      <p class="mt-2 mb-20 text-7xl text-white">From Beginner<br>to Master</p>
-      <p class="mb-16 text-4xl text-white">從初學到成為專精者的好地方。</p>
-      <a href="#" class="py-3 pr-10 pl-12 pinkbtn tracking-wider text-white">預約體驗</a>
+  <div class="topbanner relative bg-cover bg-top bg-no-repeat xl:h-[100vh]">
+    <div class="absolute left-[10%] top-1/4">
+      <p class="text-lg text-white xl:text-4xl">the Perfect Place</p>
+      <p class="mb-20 mt-[10px] text-3xl font-medium leading-9 tracking-widest text-white xl:text-7xl">From Beginner<br>to Master</p>
+      <p class="mb-16 text-lg text-white xl:text-4xl">從初學到成為專精者的好地方。</p>
+      <a href="#" class="pinkbtn py-3 pl-12 pr-10 tracking-wider text-white">預約體驗</a>
     </div>
   </div>
 
-  <div class="bordercolor flex justify-around border-b-2 py-6">
-    <div class="flex items-center">
-      <img src="@/assets/img/member.png" alt="" class="w-10">
+  <div class="bordercolor container mx-auto flex w-[96%] flex-wrap items-start justify-center border-b-2 py-6 xl:flex xl:flex-nowrap">
+    <div class="flex w-1/2 justify-start px-4">
+    <div class="flex items-center justify-start">
+      <img src="@/assets/img/member.png" alt="" class="w-4 xl:w-10">
       <div class="ml-2">
         <p class="text-sm text-white">體驗課程<br>Trial Class</p>
       </div>
       <p></p>
     </div>
-
-    <div class="flex items-center">
-      <img src="@/assets/img/booking.png" alt="" class="w-10">
-      <div class="ml-2">
-        <p class="text-sm text-white">課程介紹<br>Course Introduction</p>
-      </div>
     </div>
 
-    <div class="flex items-center">
-      <img src="@/assets/img/offer.png" alt="" class="w-10">
+    <div class="flex w-1/2 justify-start px-4">
+    <div class="flex items-center justify-start">
+      <img src="@/assets/img/booking.png" alt="" class="w-4 xl:w-10">
+      <div class="ml-2">
+        <p class="text-sm text-white">課程介紹<br>Course <br>Introduction</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex w-1/2 justify-start px-4">
+    <div class="flex items-center justify-start">
+      <img src="@/assets/img/offer.png" alt="" class="w-4 xl:w-10">
       <div class="ml-2">
         <p class="text-sm text-white">優惠訊息<br>Discount</p>
       </div>
     </div>
+    </div>
 
-    <div class="flex items-center">
-      <img src="@/assets/img/member-only.png" alt="" class="w-10">
+    <div class="flex w-1/2 justify-start px-4">
+    <div class="flex items-center justify-start">
+      <img src="@/assets/img/member-only.png" alt="" class="w-4 xl:w-10">
       <div class="ml-2">
         <p class="text-sm text-white">會員專區<br>Ｍember Only</p>
       </div>
     </div>
   </div>
+  </div>
 
-  <div class="container mx-auto flex">
-    <div class="mx-5  grid grid-cols-3 justify-center gap-9 py-32">
-      <div>
+  <div class="container mx-auto flex w-[90%] pt-[60px]">
+    <div class=" mx-auto xl:mx-5 xl:grid xl:grid-cols-3 xl:justify-center xl:gap-9 xl:pt-32">
+      <div class="mx-4">
         <infoBox :img="img1" :title="title1" :text="text1"></infoBox>
       </div>
 
-      <div>
+      <div class="mx-4">
         <infoBox :img="img2" :title="title2" :text="text2"></infoBox>
       </div>
 
-      <div>
+      <div class="mx-4">
        <infoBox :img="img3" :title="title3" :text="text3"></infoBox>
      </div>
 
     </div>
   </div>
 
-  <div class="flex justify-center pb-28">
+  <div class="mb-20 mt-5 flex justify-center xl:mb-0 xl:mt-[100px] xl:pb-28">
       <whitebtn><a href="https://www.flyhighyoga.com.tw/press">MORE</a></whitebtn>
   </div>
-  <div class="middlebanner relative">
-    <div class="left10 absolute top-1/2">
-      <p class="text-5xl text-white">My Yoga Life</p>
-      <p class="mb-10 text-3xl text-white">將瑜伽融入生活，隨時來場身體探險。</p>
+  <div class="middlebanner relative h-60 bg-cover xl:h-[560px]">
+    <div class="absolute left-[10%] top-1/2 -translate-y-1/2">
+      <p class="text-[26px] text-white xl:text-5xl">My Yoga Life</p>
+      <p class=" mb-9 text-sm text-white xl:mb-10 xl:text-3xl">將瑜伽融入生活，隨時來場身體探險。</p>
         <redbtn class="flex justify-start"><a href="＃">關於我們</a></redbtn>
     </div>
   </div>
-  <div class="my-28">
-    <div class="container mx-auto mb-14">
-      <h2 class="mb-4 text-center text-4xl font-medium text-white">三大授課結構</h2>
+  <div class="pb-20 pt-[60px] xl:my-[120px]">
+    <div class="container mx-auto pb-20">
+      <h2 class="mb-2 text-center text-[28px] font-medium text-white xl:mb-4 xl:text-4xl">三大授課結構</h2>
       <p class="text-center text-sm font-light text-white opacity-50">TEACHING STRUCTURE</p>
-    </div>
 
-    <div class="flex justify-center">
-      <div class="mb-5 w-1/3 px-5">
-        <div class="cardcolorleft rounded-2xl px-10 pb-16 pt-12">
+    <div class="flex flex-col xl:flex xl:flex-row xl:justify-center">
+      <div class="mx-[5%] mb-5 xl:mb-5 xl:w-1/3 xl:px-5">
+        <div class="cardcolorleft rounded-2xl p-6 xl:px-10 xl:pb-16 xl:pt-12">
           <div>
-            <div>
-              <p class="text-xl font-bold text-white">反重力課程</p>
-              <p class="font-light text-white">AntiGravity® Fitness</p>
+            <div class="flex items-center xl:block">
+              <p class="text-sm font-bold text-white xl:text-xl">反重力課程</p>
+              <p class="ml-1 text-xs text-white xl:ml-0">AntiGravity® Fitness</p>
             </div>
-            <div class="my-14 text-3xl tracking-widest text-white">
-              <p>感受空中伸展的<br>藝術之美。</p>
+            <div class="mb-9 mt-3 text-[20px] tracking-widest text-white xl:my-14 xl:flex xl:flex-col xl:text-3xl">
+              感受空中伸展的<span>藝術之美。</span>
             </div>
           </div>
           <div>
@@ -120,16 +127,16 @@ const text3 = `無需飛往外太空，
 
       </div>
 
-      <div class="mb-5 w-1/3 px-5">
-        <div class="cardcolorright rounded-2xl px-10 pb-16 pt-12">
+      <div class="mx-[5%] mb-5 xl:mb-5 xl:w-1/3 xl:px-5">
+        <div class="cardcolorright rounded-2xl p-6 xl:px-10 xl:pb-16 xl:pt-12">
           <div>
-            <div>
-              <p class="text-xl font-bold text-white">大地課程</p>
-              <p class="font-light text-white">Yoga</p>
+            <div class="flex items-center xl:block">
+              <p class="text-sm font-bold text-white xl:text-xl">大地課程</p>
+              <p class="ml-1 text-xs text-white xl:ml-0">Yoga</p>
 
             </div>
-            <div class="my-14 text-3xl tracking-widest text-white">
-              <p>從豐富的課中<br>摸索自我。</p>
+            <div class="mb-9 mt-3 text-[20px] tracking-widest text-white xl:my-14 xl:flex xl:flex-col xl:text-3xl">
+              從豐富的課中<span>摸索自我。</span>
             </div>
           </div>
           <div>
@@ -144,28 +151,29 @@ const text3 = `無需飛往外太空，
       </div>
     </div>
 
-    <div class="mb-16 mt-36">
-            <div class="flex justify-center gap-20">
+    <div class="mx-[5%] mb-0 mt-5 xl:mb-16 xl:mt-36">
+            <div class="flex justify-between xl:justify-center xl:gap-20">
               <whitebtn><a href="＃">師資介紹</a></whitebtn>
               <whitebtn><a href="＃">據點介紹</a></whitebtn>
             </div>
     </div>
+  </div>
 
-    <div class="middlebanner2 relative">
-      <div class="right10 absolute top-1/2">
-      <p class="text-5xl text-white">My Yoga Life</p>
-      <p class="mb-10 text-3xl text-white">將瑜伽融入生活，隨時來場身體探險。</p>
-        <redbtn class="flex justify-start"><a href="＃">關於我們</a></redbtn>
+    <div class="middlebanner2 relative h-60 bg-cover xl:h-[560px]">
+      <div class="absolute left-[10%] top-1/2 -translate-y-1/2 xl:left-[unset] xl:right-[10%]">
+      <p class="text-[26px] text-white xl:text-5xl">AntiGravity® Fitness</p>
+      <p class=" mb-9 text-sm text-white xl:mb-10 xl:text-3xl">NASM AFAA YA 唯一世界認證空中系統</p>
+        <redbtn class="flex justify-start"><a href="＃">了解更多</a></redbtn>
      </div>
     </div>
 
-    <div class="anti pb-32 pt-36">
+    <div class="anti py-20 xl:pb-32 xl:pt-36">
        <div class="container mx-auto">
-          <p class="mb-9 text-center text-4xl text-white">台灣唯一官方認證單位</p>
-          <p class="text-center text-6xl text-white">AntiGravity® Taiwan</p>
+          <p class="mb-2 text-center text-[18px] text-white xl:mb-9 xl:text-4xl">台灣唯一官方認證單位</p>
+          <p class="text-center text-[26px] text-white xl:text-6xl">AntiGravity® Taiwan</p>
 
-          <div class="mb-12 mt-20">
-            <div class="flex justify-center gap-40">
+          <div class="xl:mb-12 mt-20">
+            <div class="mx-auto flex w-[82%] justify-between xl:mx-0 xl:w-full xl:justify-center xl:gap-40">
               <whitebtn><a href="＃">私教課程</a></whitebtn>
               <whitebtn><a href="＃">企業包班</a></whitebtn>
             </div>
@@ -173,17 +181,17 @@ const text3 = `無需飛往外太空，
        </div>
     </div>
 
-    <div class="pt-28 ">
+    <div class="xl:pt-28 pt-[60px]">
       <div class="container mx-auto px-4">
-        <div class="mb-4 text-center text-4xl text-white">預約體驗</div>
+        <div class="mb-2 xl:mb-4 text-center text-[28px] xl:text-4xl text-white font-medium">預約體驗</div>
         <div class="mb-14 text-center text-sm font-normal text-white opacity-50">RESERVATION</div>
         <div></div>
       </div>
     </div>
 
-    <!-- <formVue></formVue> -->
+    <formVue></formVue>
 
-    <div class="mb-12 mt-20">
+    <div class="mb-0 xl:mb-12 mt-[60px] xl:mt-20">
             <div class="flex justify-center gap-40">
               <whitebtn><a href="＃">送出預約</a></whitebtn>
             </div>
@@ -201,17 +209,15 @@ const text3 = `無需飛往外太空，
 
 .topbanner{
   background-image: url("@/assets/img/slide-1.jpg");
-  height: 890px;
+  height: calc(100vh - 80px);
 }
 
 .middlebanner{
   background-image: url("@/assets/img/home-banner-1.jpg");
-  height: 560px;
 }
 
 .middlebanner2{
   background-image: url("@/assets/img/home-banner-3.jpeg");
-  height: 740px;
 }
 
 .left10{

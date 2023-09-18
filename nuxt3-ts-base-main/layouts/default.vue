@@ -6,7 +6,7 @@ import footerLayout from '@/components/layout/footerLayout.vue';
 
 <template>
 <div id="layout">
-  <header-layout class="hidden sm:hidden xl:hidden"></header-layout>
+  <header-layout></header-layout>
   <NuxtPage></NuxtPage>
   <footerLayout></footerLayout>
 </div>
