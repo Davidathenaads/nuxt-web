@@ -1,10 +1,42 @@
 <script setup lang="ts">
 // layout
+import { Close } from '@element-plus/icons-vue';
+
+const menuOpen = ref(false);
+const mobilebtnclick = () => {
+  menuOpen.value = !menuOpen.value;
+};
 
 </script>
 
 <template>
-<div class="my-5 flex items-center justify-center text-white xl:flex">
+  <transition name="mobilemenu">
+
+   <div class="mobilecolor fixed left-[-100%] top-0 z-10 m-0 h-[100vh] w-full overflow-scroll p-0  transition-all duration-300 delay-0" :class="{open: menuOpen}">
+
+    <div class="absolute right-5 top-9">
+      <el-icon :size="50" color="#fff" class="z-20" @click="mobilebtnclick"><Close /></el-icon>
+    </div>
+
+    <ul class="text-white">
+      <li class="m-5 py-2 text-sm">品牌介紹 Introduction</li>
+      <li class="m-5 py-2 text-sm">官方訊息 News</li>
+      <li class="m-5 py-2 text-sm">課程資訊 Course Info.</li>
+      <li class="m-5 py-2 text-sm">師資認證 Teacher Training</li>
+      <li class="m-5 py-2 text-sm">據點介紹 Location</li>
+      <li class="m-5 py-2 text-sm">報名資訊 Activity</li>
+      <li class="m-5 py-2 text-sm">聯絡我們 Contact Us</li>
+    </ul>
+
+  </div>
+</transition>
+
+<div class="my-5 flex items-center justify-around text-white xl:flex" @click="mobilebtnclick">
+  <div class=" justify-start sm:hidden w-5 h-4 relative">
+    <span class="block absolute h-[1px] w-full bg-white rounded=[9px] opacity-100 left-0"></span>
+    <span class="block absolute h-[1px] w-full bg-white rounded=[9px] opacity-100 left-0 top-[6px]"></span>
+    <span class="block absolute h-[1px] w-full bg-white rounded=[9px] opacity-100 left-0 top-3"></span>
+  </div>
   <a href="" class=" flex items-center xl:flex">
     <img src="@/assets/img/logo.svg" alt="" class="h-8 xl:h-10">
     <span class="ml-5">
@@ -28,6 +60,36 @@
 <style lang="scss" scoped>
 .home123213123{
   width: 100px;
+}
+
+.mobilecolor{
+  background-color: #825450d9;
+}
+
+.mobilemenu-enter-active,
+.mobilemenu-leave-active {
+  transition: all 0.3s ease 0;
+}
+
+// .mobilemenu-enter-from{
+//   left: -100%;
+// }
+
+// .mobilemenu-enter-to{
+//   left: 0;
+// }
+
+// .mobilemenu-leave-from{
+//   left: 0;
+// }
+
+// .mobilemenu-leave-to{
+//   left: -100%;
+// }
+
+.open{
+  left: 0 !important;
+  transition: all 0.3s ease 0;
 }
 
 </style>

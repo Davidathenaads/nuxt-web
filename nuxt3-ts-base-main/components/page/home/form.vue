@@ -83,7 +83,7 @@ const sujectvalue = ref('');
     <div class="mb-9">
         <el-radio-group v-model="radio" class="break-all">
             <pre class="flex flex-col justify-center break-all">
-            <el-radio v-for="item in store" :key="item" :label="item" class="break-all mt-6 xl:mt-1">
+            <el-radio v-for="item in store" :key="item" :label="item" class="mt-6 break-all xl:mt-1">
               <p class="whitespace-normal break-all">{{ item }}</p>
             </el-radio>
             </pre>
