@@ -12,7 +12,7 @@ const mobilebtnclick = () => {
 <template>
   <transition name="mobilemenu">
 
-   <div class="mobilecolor fixed left-[-100%] top-0 z-10 m-0 h-[100vh] w-full overflow-scroll p-0  transition-all duration-300 delay-0" :class="{open: menuOpen}">
+   <div class="mobilecolor fixed left-[-100%] top-0 z-10 m-0 h-[100vh] w-full overflow-scroll p-0  transition-all delay-0 duration-300" :class="{open: menuOpen}">
 
     <div class="absolute right-5 top-9">
       <el-icon :size="50" color="#fff" class="z-20" @click="mobilebtnclick"><Close /></el-icon>
@@ -31,13 +31,13 @@ const mobilebtnclick = () => {
   </div>
 </transition>
 
-<div class="my-5 flex items-center justify-around text-white xl:flex" @click="mobilebtnclick">
-  <div class=" justify-start sm:hidden w-5 h-4 relative">
-    <span class="block absolute h-[1px] w-full bg-white rounded=[9px] opacity-100 left-0"></span>
-    <span class="block absolute h-[1px] w-full bg-white rounded=[9px] opacity-100 left-0 top-[6px]"></span>
-    <span class="block absolute h-[1px] w-full bg-white rounded=[9px] opacity-100 left-0 top-3"></span>
+<div class="my-5 flex items-center justify-around text-white xl:flex">
+  <div class=" relative h-4 w-5 justify-start sm:hidden" @click="mobilebtnclick">
+    <span class="rounded=[9px] absolute left-0 block h-[1px] w-full bg-white opacity-100"></span>
+    <span class="rounded=[9px] absolute left-0 top-[6px] block h-[1px] w-full bg-white opacity-100"></span>
+    <span class="rounded=[9px] absolute left-0 top-3 block h-[1px] w-full bg-white opacity-100"></span>
   </div>
-  <a href="" class=" flex items-center xl:flex">
+  <a href="" class=" flex items-center xl:flex select-none">
     <img src="@/assets/img/logo.svg" alt="" class="h-8 xl:h-10">
     <span class="ml-5">
       <p class="hidden xl:block">AntiGravity® Taiwan</p>
@@ -70,22 +70,6 @@ const mobilebtnclick = () => {
 .mobilemenu-leave-active {
   transition: all 0.3s ease 0;
 }
-
-// .mobilemenu-enter-from{
-//   left: -100%;
-// }
-
-// .mobilemenu-enter-to{
-//   left: 0;
-// }
-
-// .mobilemenu-leave-from{
-//   left: 0;
-// }
-
-// .mobilemenu-leave-to{
-//   left: -100%;
-// }
 
 .open{
   left: 0 !important;
