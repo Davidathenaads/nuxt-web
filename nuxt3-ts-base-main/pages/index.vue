@@ -1,10 +1,26 @@
 <script setup lang="ts">
-import indexView from '@/components/page/indexView.vue';
+import banner from '@/components/page/home/banner.vue';
+import bannerMenuVue from '@/components/page/home/bannerMenuVue.vue';
+import postVue from '@/components/page/home/postVue.vue';
+import bannerSecond from '@/components/page/home/bannerSecond.vue';
+import classVue from '@/components/page/home/classVue.vue';
+import classSecond from '@/components/page/home/classSecond.vue';
+import bannerThird from '@/components/page/home/bannerThird.vue';
+import formVue from '@/components/page/home/form.vue';
 // home 請填寫功能描述👈
 </script>
 
 <template>
-<indexView></indexView>
+  <div>
+    <banner></banner>
+    <bannerMenuVue></bannerMenuVue>
+    <postVue></postVue>
+    <bannerSecond></bannerSecond>
+    <classVue></classVue>
+    <bannerThird></bannerThird>
+    <classSecond></classSecond>
+    <formVue></formVue>
+  </div>
 
 </template>
 
