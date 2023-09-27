@@ -27,6 +27,28 @@ module.exports = {
           footercolor: '#E74760',
           mobilecolor: '#825450d9'
         }
+      },
+      keyframes: {
+        anileft: {
+          '0%': {
+            opacity: '0', transform: 'translate3d(-100%,0,0)'
+          },
+          '100%': {
+            opacity: '1', transform: 'translateZ(0)'
+          }
+        },
+        aniright: {
+          '0%': {
+            opacity: '0', transform: 'translate3d(100%,0,0)'
+          },
+          '100%': {
+            opacity: '1', transform: 'translateZ(0)'
+          }
+        }
+      },
+      animation: {
+        anileft: 'anileft 1s ease 1',
+        aniright: 'aniright 1s ease 1'
       }
     }
   },

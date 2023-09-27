@@ -6,7 +6,6 @@
 #whitebtn
   button(class="border border-solid border-white px-10 py-3 text-white")
     slot
-
 </template>
 
 <style lang="scss" scoped>

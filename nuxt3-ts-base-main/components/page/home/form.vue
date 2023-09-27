@@ -1,9 +1,9 @@
 <script setup lang="ts">
+// form 表單👈
 import whitebtn from '@/components/page/home/whitebtn.vue';
-const radio = ref(10);
-// form 請填寫功能描述👈
+// import formStr from '@/components/formStr';
+const radio = ref('');
 const hobbits = ref(['一週兩次以上', '一週一次', '無']);
-
 const hobbitsvalue = ref('');
 const location = ref(['台中市中區',
   '台中市東區',
@@ -44,34 +44,42 @@ const sujectvalue = ref('');
   div(class="container mx-auto w-[90%] p-4 xl:w-[750px]")
     div(class="flex justify-center")
       div(class="")
-        p(class="mb-5 mt-10 flex justify-start text-xs text-white") 標記<span class="text-yoga-red">*</span>為必填項目
+        p(class="mb-5 mt-10 flex justify-start text-xs text-white").
+          標記<span class="text-yoga-red">*</span>為必填項目
 
     div(class="flex flex-col items-center justify-center")
       div(class=" mb-9 w-full")
-        p(class="mb-2 flex justify-start text-base text-white") 姓名<span class="text-yoga-red">*</span>
+        p(class="mb-2 flex justify-start text-base text-white") 姓名
+          span(class="text-yoga-red") *
         input(type="text" placeholder="" class="w-full bg-yoga-pink2 px-4 py-2 text-white")
       div(class=" mb-9 w-full")
-        p(class="mb-2 flex justify-start text-base text-white") 電話<span class="text-yoga-red">*</span>
+        p(class="mb-2 flex justify-start text-base text-white") 電話
+          span(class="text-yoga-red") *
         input(type="text" placeholder="" class="w-full bg-yoga-pink2 px-4 py-2")
       div(class=" mb-9 w-full")
-        p(class="mb-2 flex justify-start text-base text-white") E-mail<span class="text-yoga-red">*</span>
+        p(class="mb-2 flex justify-start text-base text-white") E-mail
+        span(class="text-yoga-red") *
         input(type="text" placeholder="" class="w-full bg-yoga-pink2 px-4 py-2")
       div(class=" mb-9 w-full")
-        p(class="mb-2 flex justify-start text-base text-white") 運動習慣<span class="text-yoga-red">*</span>
+        p(class="mb-2 flex justify-start text-base text-white") 運動習慣
+          span(class="text-yoga-red") *
         select(v-model="hobbitsvalue" type="text" placeholder="" class="w-full bg-yoga-pink2 px-4 py-2 text-white")
           option(disabled value="")
           option(v-for="item in hobbits" :key="item" :value="item") {{ item }}
 
       div(class=" mb-9 w-full")
-        p(class="mb-2 flex justify-start text-base text-white") 居住區域<span class="text-yoga-red">*</span>
+        p(class="mb-2 flex justify-start text-base text-white") 居住區域
+          span(class="text-yoga-red") *
         select(v-model="locationvalue" type="text" placeholder="" class="w-full bg-yoga-pink2 px-4 py-2 text-white")
           option(disabled value="")
           option(v-for="item in location" :key="item" :value="item") {{ item }}
     div(class="flex justify-start")
       div(class="")
-        p(class="mt-10 flex justify-start text-base text-white") 欲預約館別<span class="text-yoga-red">*</span>
+        p(class="mt-10 flex justify-start text-base text-white") 欲預約館別
+          span(class="text-yoga-red") *
     div(class="mb-9")
       el-radio-group(v-model="radio" class="break-all")
+        p {{ radio }}
         pre(class="flex flex-col justify-center break-all")
           el-radio(v-for="item in store" :key="item" :label="item" class="mt-6 break-all xl:mt-1")
             p(class="whitespace-normal break-all") {{ item }}
@@ -79,7 +87,8 @@ const sujectvalue = ref('');
     div(class="flex justify-center")
       div(class="")
         div(class=" mb-9")
-          p(class="mb-2 flex justify-start text-base text-white") 欲體驗科目<span class="text-yoga-red">*</span>
+          p(class="mb-2 flex justify-start text-base text-white") 欲體驗科目
+            span(class="text-yoga-red") *
           select(v-model="locationvalue" type="text" placeholder="" class="w-full bg-yoga-pink2 px-4 py-2 text-white")
             option(disabled value="") 請選擇
             option(v-for="item in suject" :key="item" :value="item" :v-model="sujectvalue") {{ item }}
