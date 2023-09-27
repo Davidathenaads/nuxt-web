@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// whitebtn 請填寫功能描述👈
+// whitebtn 白色按鈕
 </script>
 
 <template lang="pug">

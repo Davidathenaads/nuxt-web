@@ -7,8 +7,6 @@ import classVue from '@/components/page/home/classVue.vue';
 import classSecond from '@/components/page/home/classSecond.vue';
 import bannerThird from '@/components/page/home/bannerThird.vue';
 import formVue from '@/components/page/home/form.vue';
-import eleForm from '@/components/page/home/eleForm.vue';
-import message from '@/components/page/home/message.vue';
 // home 首頁
 </script>
 
@@ -22,8 +20,6 @@ import message from '@/components/page/home/message.vue';
     <bannerThird></bannerThird>
     <classSecond></classSecond>
     <formVue></formVue>
-    <eleForm></eleForm>
-    <message></message>
   </div>
 
 </template>

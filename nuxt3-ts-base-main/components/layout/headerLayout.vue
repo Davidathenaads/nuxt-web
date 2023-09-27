@@ -3,8 +3,12 @@
 import { Close } from '@element-plus/icons-vue';
 
 const menuOpen = ref(false);
-const mobilebtnclick = () => {
+const Mobilebtnclick = () => {
   menuOpen.value = !menuOpen.value;
+};
+const isSeminars = ref(false);
+const ClickSeminars = () => {
+  isSeminars.value = !isSeminars.value;
 };
 
 </script>
@@ -15,7 +19,7 @@ const mobilebtnclick = () => {
     div(name="mobilemenu")
       div(class="fixed left-[-100%] top-0 z-10 m-0 h-[100vh] w-full overflow-scroll bg-yoga-mobilecolor p-0  transition-all delay-0 duration-300" :class="{open: menuOpen}")
         div(class="absolute right-5 top-9")
-          el-icon(:size="50" color="#fff" class="z-20" @click="mobilebtnclick")
+          el-icon(:size="50" color="#fff" class="z-20" @click="Mobilebtnclick")
             Close
 
         ul(class="text-white")
@@ -28,7 +32,7 @@ const mobilebtnclick = () => {
           li(class="m-5 py-2 text-sm") 聯絡我們 Contact Us
 
     div(class="my-5 flex items-center justify-around text-white xl:flex")
-      div(class=" relative h-4 w-5 justify-start sm:hidden" @click="mobilebtnclick")
+      div(class=" relative h-4 w-5 justify-start sm:hidden" @click="Mobilebtnclick")
         span(class="absolute left-0 block h-[1px] w-full rounded-[9px] bg-white opacity-100")
         span(class="absolute left-0 top-[6px] block h-[1px] w-full rounded-[9px] bg-white opacity-100")
         span(class="absolute left-0 top-3 block h-[1px] w-full rounded-[9px] bg-white opacity-100")
@@ -37,22 +41,134 @@ const mobilebtnclick = () => {
         span(class="ml-5")
           p(class="hidden xl:block") AntiGravity® Taiwan
       ul(class="hidden items-center justify-around xl:flex")
-        li(class="m-5 text-sm") 品牌介紹
-        li(class="m-5 text-sm") 官方訊息
-        li(class="m-5 text-sm") 課程資訊
-        li(class="m-5 text-sm") 據點介紹
-        li(class="m-5 text-sm") 師資認證
-        li(class="m-5 text-sm") 報名資訊
-        li(class="m-5 text-sm") 聯絡我們
-
+        li(class="dropdown p-5 text-sm")
+          label(class="cursor-pointer ") 品牌介紹
+            div(class="dropdown-menu absolute z-20 ml-7 hidden pt-12 text-sm")
+              ul(class=" -mt-1  mb-0 min-w-[220px]  pl-0")
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") FLY HIGH YOGA
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") AntiGravity® Fitness
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") ACTIVE™
+        li(class="dropdown p-5 text-sm")
+          label(class="cursor-pointer ") 官方訊息
+            div(class="dropdown-menu absolute z-20 ml-7 hidden pt-12 text-sm")
+              ul(class=" -mt-1  mb-0 min-w-[220px] pl-0")
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 官方訊息
+                    span Ｎews
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 優惠訊息
+                    span SPECIAL OFFER
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 課程分享
+                    span Class Highlights
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 特別活動
+                    span Special Events
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 部落格
+                    span Blog
+        li(class="dropdown p-5 text-sm")
+          label(class="cursor-pointer ") 課程資訊
+            div(class="dropdown-menu absolute z-20 ml-7 hidden pt-12 text-sm")
+              ul(class=" -mt-1  mb-0 min-w-[220px]  pl-0")
+                li(class="bg-[#F09491] hover:opacity-80" @click="ClickSeminars")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 瑜珈研習
+                    span Seminars
+                  ul(v-show="isSeminars")
+                    li
+                      a 123test
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 瑜珈課程
+                    span General Course
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 瑜珈私教
+                    span PRIVATE COURSE
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 瑜珈包班
+                    span BUSINESS COURSE
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 瑜珈師資
+                    span Teachers
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 瑜珈課程表
+                    span Class Schedule
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 健身私教
+        li(class="dropdown p-5 text-sm")
+          label(class="cursor-pointer ") 據點介紹
+            div(class="dropdown-menu absolute z-20 ml-7 hidden pt-12 text-sm")
+              ul(class=" -mt-1  mb-0 min-w-[220px]  pl-0")
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 台中崇德館
+                    span Chong-De
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 台中崇德尊爵館
+                    span Chong-De2
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 台南崇善館
+                    span Chong-Shan
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 台中精誠館
+                    span Ching-Cheng
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 台中河南館
+                    span He-Nan
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 台中黎明館
+                    span Li-Ming
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 台中一中館
+                    span Yi-Jhong
+        li(class="dropdown p-5 text-sm")
+          label(class="cursor-pointer ") 師資認證
+            div(class="dropdown-menu absolute z-20 ml-7 hidden pt-12 text-sm")
+              ul(class=" -mt-1  mb-0 min-w-[220px]  pl-0")
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 反重力空中培訓
+                    span AG® Trainings
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 瑜珈師資培訓
+                    span Yoga Teacher Trainings
+        li(class="dropdown p-5 text-sm")
+          label(class="cursor-pointer ") 報名資訊
+            div(class="dropdown-menu absolute z-20 ml-7 hidden pt-12 text-sm")
+              ul(class=" -mt-1  mb-0 min-w-[220px]  pl-0")
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 限時優惠
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 新館歡慶
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 師資培訓
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 會員活動
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 特別活動
+        li(class="dropdown p-5 text-sm")
+          label(class="cursor-pointer ") 聯絡我們
+            div(class="dropdown-menu absolute z-20 ml-7 hidden pt-12 text-sm")
+              ul(class=" -mt-1  mb-0 min-w-[220px]  pl-0")
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 企業合作方案
+                    span Business cooperation
+                li(class="")
+                  a(href="bg-[#F09491] hover:opacity-80#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 徵才資訊
+                    span Recruit
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 聯絡資訊
+                    span Contact Information
+                li(class="bg-[#F09491] hover:opacity-80")
+                  a(href="#" class="inline-block w-full min-w-[220px] max-w-[360px] border-b border-solid border-[#f0c4c3]  px-4 pb-3 pt-[10px]") 學生滿意度問卷
+                    span Student Satisfaction Survey
       button(class="rounded-s-sm border-2 px-2 py-1 text-xs") 會員登入
 
 </template>
 
 <style lang="scss" scoped>
-.open{
-  left: 0 !important;
-  transition: all 0.3s ease 0;
-}
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
 
 </style>

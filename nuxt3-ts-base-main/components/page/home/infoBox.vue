@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// infobox 請填寫功能描述👈
+// infobox 文章box
 import redbtn from '@/components/page/home/redbtn.vue';
 
 const props = defineProps({
